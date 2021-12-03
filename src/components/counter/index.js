@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { PureComponent } from 'react';
 import { Button } from 'antd';
-import { decrement, increment, incrementByAmount, incrementAsync, selectCount } from './counterSlice';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as countActions from '@/store/actions/count.action';
 import './index.less';
 
-function Counter() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
+class Counter extends PureComponent {
+  render() {
+    const { count, increment, decrement } = this.props;
 
-  const [incrementAmount, setIncrementAmount] = useState('2');
-
-  return (
-    <div>
-      <div className="row">
-        <Button className="button" aria-label="Increment value" onClick={() => dispatch(increment())}>
-          +
-        </Button>
-        <span className="value">{count}</span>
-        <Button className="button" aria-label="Decrement value" onClick={() => dispatch(decrement())}>
-          -
-        </Button>
-      </div>
-      <div className="row">
+    return (
+      <div>
+        <div className="row">
+          <Button className="button" aria-label="Increment value" onClick={() => increment()}>
+            +
+          </Button>
+          <span className="value">{count}</span>
+          <Button className="button" aria-label="Decrement value" onClick={() => decrement()}>
+            -
+          </Button>
+        </div>
+        {/* <div className="row">
         <input className="textbox" aria-label="Set increment amount" value={incrementAmount} onChange={(e) => setIncrementAmount(e.target.value)} />
         <Button className="button" onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}>
           Add Amount
@@ -29,9 +29,25 @@ function Counter() {
         <Button className="asyncButton" onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}>
           Add Async
         </Button>
+      </div> */}
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Counter;
+Counter.propTypes = {
+  // count: PropTypes.objectOf(PropTypes.any).isRequired,
+  count: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  count: state.count,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  ...bindActionCreators(countActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
