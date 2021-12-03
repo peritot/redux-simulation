@@ -1,1 +1,1 @@
-export * from './count.type';
+export * from './counter.type';

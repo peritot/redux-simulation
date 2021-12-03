@@ -20,7 +20,8 @@ module.exports = {
     },
   },
   rules: {
+    'no-param-reassign': [0],
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'no-param-reassign': ['error', { props: false }],
   },
 };

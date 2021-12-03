@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as countActions from '@/store/actions/count.action';
+import * as countActions from '@/store/actions/counter.action';
 import './index.less';
 
 class Counter extends PureComponent {
@@ -36,7 +36,6 @@ class Counter extends PureComponent {
 }
 
 Counter.propTypes = {
-  // count: PropTypes.objectOf(PropTypes.any).isRequired,
   count: PropTypes.number.isRequired,
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
