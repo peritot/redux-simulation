@@ -1,7 +1,8 @@
 /**
- * @param reducer A function that returns the next state tree
- * @param [preloadedState] The initial state
- * @param [enhancer] The store enhancer
+ * @param {Function} reducer A function that returns the next state tree, given the current state tree and the action to handle.
+ * @param {any} [preloadedState] The initial state.
+ * @param {Function} [enhancer] The store enhancer.
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions and subscribe to changes.
  */
 export default function createStore(reducer, preloadedState, enhancer) {
   if (typeof reducer !== 'function') {

@@ -1,5 +1,6 @@
 /**
  * @param {Object} reducers An object whose values correspond to different reducer functions that need to be combined into one.
+ * @returns {Function} A reducer function that invokes every reducer inside the passed object, and builds a state object with the same shape.
  */
 export default function combineReducers(reducers) {
   const keys = Object.keys(reducers);
