@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Button } from 'antd';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from '@/redux';
 import * as countActions from '@/store/actions/counter.action';
 import './index.less';
 
