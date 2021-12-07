@@ -4,7 +4,7 @@ import './index.less';
 
 function App() {
   return (
-    <section className="app-redux-toolkit">
+    <section className="app-counter">
       <Counter />
     </section>
   );

@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-// import { applyMiddleware, createStore } from 'redux';
 import { applyMiddleware, createStore } from '@/redux';
 import reducer from '@/store/reducers';
 import logger from '@/store/middlewares/logger';

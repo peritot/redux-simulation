@@ -1,21 +1,15 @@
 import Root from '@/views/root';
-import Home from '@/views/home';
-import ReduxToolkit from '@/views/reduxToolkit';
+import Counter from '@/views/counter';
 
 const routes = [
   {
-    title: 'mini-redux',
+    title: 'redux-simulation',
     component: Root,
     routes: [
       {
-        path: ['/home', '/'],
+        path: ['/redux', '/'],
         exact: true,
-        component: Home,
-      },
-      {
-        path: '/redux',
-        exact: true,
-        component: ReduxToolkit,
+        component: Counter,
       },
     ],
   },

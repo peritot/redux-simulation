@@ -1,6 +1,6 @@
 {
-  "short_name": "mini-redux",
-  "name": "mini-redux",
+  "short_name": "redux-simulation",
+  "name": "redux-simulation",
   "icons": [
     {
       "src": "favicon.ico",
